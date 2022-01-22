@@ -19,6 +19,15 @@ body
     margin: 2rem;
 }
 
+
+@media screen and (max-width:380px) {
+
+  html{
+    font-size: 5%;
+    
+  }
+}
+
 .card {
     margin-top: 120rem;
     font-family: 'Source Serif 4', sans-serif;
