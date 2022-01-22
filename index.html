@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="center">
+            <h1 id="head">QR Code Generator</h1>
+        </div>
+        <div class="center">
+            <img src="" alt="" id="image">
+        </div>
+        <div class="center">
+            <select id="size">
+                <option value="Select Size"> Select Size</option>
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="250">250x250</option>
+                <option value="300">300x300</option>
+                <option value="500">500x500</option>
+            </select>
+        </div>
+        <div class="center">
+            <textarea placeholder="Enter Your Text" id="tarea" cols="24" rows="5"></textarea>
+        </div>
+
+        <div class="center">
+            <input type="submit" value="Generate" id="submit" onclick="qr()">
+        </div>
+
+    </div>
+
+    <script>
+        
+       
+        function qr()
+        {
+            let api=`https://chart.googleapis.com/chart?chf=bg,s,65432100&cht=qr&chs=`
+            let size=document.getElementById("size").value;
+            let text=document.getElementById("tarea").value;
+            let img=document.getElementById("image");
+            if(text!=="" && size!=="Select Size")
+            {
+                img.src=api+`${size}x${size}`+"&chl="+text;
+                
+            }
+            else if(text==="")
+            {
+                alert("Please Enter Text");
+            }
+            else
+            {
+                alert("Please select size");
+            }
+            
+
+        }
+
+    </script>
+
+</body>
+
+</html>
