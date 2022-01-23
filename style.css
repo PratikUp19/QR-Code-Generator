@@ -12,20 +12,28 @@ body
    
      background-color: rgb(1 1 1/40%); 
 }
+
+
+@media screen and (max-width:380px) {
+
+    html{
+      font-size: 5%;
+      
+    }
+
+    #submit{
+        padding: 5rem 119rem;
+    }
+
+    #tarea {
+        padding: 29rem;
+    }
+}
 #head{
    
     padding: 0;
     font-size: 40rem;
     margin: 2rem;
-}
-
-
-@media screen and (max-width:380px) {
-
-  html{
-    font-size: 3%;
-    
-  }
 }
 
 .card {
@@ -72,5 +80,6 @@ body
     font-size: 30rem;
     padding: 5rem 105rem;
     background-color: brown;
+    border: none;
     
 }
